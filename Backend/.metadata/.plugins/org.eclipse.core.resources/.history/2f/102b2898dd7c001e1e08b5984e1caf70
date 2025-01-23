@@ -1,0 +1,93 @@
+package musiquest.TeacherUser;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import musiquest.Course.Course;
+import musiquest.Course.CourseRepository;
+
+import java.util.Optional;
+@RestController
+@RequestMapping("/teacheruser")
+public class TeacherController {
+	
+	@Autowired
+    private TeacherUserRepository TeacheruserRepository;
+	
+	@Autowired 
+	private CourseRepository courseRepository;
+
+
+    private String success = "{\"message\":\"success\"}";
+    public String failure = "{\"message\":\"failure\"}";
+
+
+    @GetMapping(path = "/getallusers")
+    List<TeacherUser> getAllUsers(){
+        return TeacheruserRepository.findAll();
+    }
+
+
+    @GetMapping(path = "/{id}")
+    TeacherUser getUserById( @PathVariable int id){
+        return TeacheruserRepository.findById(id);
+    }
+    
+    @GetMapping(path = "/{courseId}/getStudents/")
+    List<Integer> getStudentIds(@PathVariable int courseId) {
+    	return courseRepository.findById(courseId).getStudentIds();
+    }
+    
+    @GetMapping(path = "/courseids")
+    List<Integer> getCourseIds(@RequestParam int teacherId) {
+    	List<Integer> courseIds = new ArrayList<>();
+    	for(Course course:courseRepository.findAll()) {
+    		if(course.getTeacher().getID() == teacherId) {
+    			courseIds.add(course.getID());
+    		}
+    	}
+    	return courseIds;
+    }
+
+
+    @PostMapping(path = "/createuser")
+	public String createUser(@RequestBody TeacherUser user){
+        if (user == null)
+            return failure;
+        TeacheruserRepository.save(user);
+        return success;
+    }
+
+
+    @PutMapping(path = "/updateuser/{id}")
+    TeacherUser updateUser(@PathVariable int id, @RequestBody TeacherUser request){
+    	TeacherUser user = TeacheruserRepository.findById(id);
+        if(user == null)
+            return null;
+        TeacheruserRepository.save(request);
+        return TeacheruserRepository.findById(id);
+    }
+    
+//    @PutMapping(path = "/createcourse")
+//    String createCourse(@PathVariable int id) {
+//    	TeacherUser user = TeacheruserRepository.findById(id);
+//    	user.createCourse(new Course(user));
+//    	return success;
+//    }
+    
+    
+	
+
+}

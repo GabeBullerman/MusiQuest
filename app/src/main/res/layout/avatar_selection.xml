@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="600dp"
+    android:background="@drawable/clear_outlined_rectangle"
+    android:padding="5dp"
+    android:layout_gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:rotationX="25"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="3"
+        android:text="Select Avatar"
+        android:shadowColor="@color/Black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/seafoam"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <Button
+        android:id="@+id/ConfirmSelection"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/seafoam"
+        android:text="Confirm Selection"
+        android:textColor="@color/Black"
+        android:textSize="15dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#000000" />
+
+    <ImageButton
+        android:id="@+id/av1"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/blackhairboyav"
+        android:translationX="30dp"
+        android:translationY="83dp"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="-3dp" />
+
+    <ImageButton
+        android:id="@+id/av2"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/blackhairgirlav"
+        android:translationX="125dp"
+        android:translationY="83dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-3dp" />
+
+    <ImageButton
+        android:id="@+id/av3"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/blondehairboyav"
+        android:translationX="220dp"
+        android:translationY="80dp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av4"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/blondehairgirlav"
+        android:translationX="33dp"
+        android:translationY="180dp"
+        tools:layout_editor_absoluteX="-7dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av5"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/brownhairboyav"
+        android:translationX="132dp"
+        android:translationY="180dp"
+        tools:layout_editor_absoluteX="-9dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+
+    <ImageButton
+        android:id="@+id/av6"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/brownhairgirlav"
+        android:translationX="225dp"
+        android:translationY="180dp"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av7"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/blackhairboyav2"
+        android:translationX="30dp"
+        android:translationY="283dp"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av8"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/blackhairgirlav2"
+        android:translationX="126dp"
+        android:translationY="283dp"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av9"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/foxav"
+        android:translationX="225dp"
+        android:translationY="283dp"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av10"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/dogav"
+        android:translationX="23dp"
+        android:translationY="385dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av11"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:background="@drawable/catav"
+        android:translationX="125dp"
+        android:translationY="385dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <ImageButton
+        android:id="@+id/av12"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginBottom="496dp"
+        android:background="@drawable/pandaav"
+        android:translationX="229dp"
+        android:translationY="389dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

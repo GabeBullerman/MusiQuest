@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/musiquest_background"
+    tools:context=".RegisterPage">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:background="@drawable/text_boxes"/>
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="@string/sign_up"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:translationY="18dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/AccountTypeDropdownLayout"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="@string/account_type"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:id="@+id/AccountTypeDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:translationY="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/userEmail"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:background="@drawable/text_boxes"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:drawablePadding="8dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/cardview_dark_background"
+        android:textStyle="bold"
+        android:translationY="-10dp" />
+
+    <EditText
+        android:id="@+id/newUsername"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
+        android:background="@drawable/text_boxes"
+        android:drawableStart="@drawable/baseline_person_24"
+        android:drawablePadding="8dp"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/cardview_dark_background"
+        android:textStyle="bold"
+        android:translationY="-10dp" />
+
+    <EditText
+        android:id="@+id/newPassword"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
+        android:background="@drawable/text_boxes"
+        android:drawableStart="@drawable/baseline_lock_24"
+        android:drawablePadding="8dp"
+        android:hint="@string/newPassword"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/cardview_dark_background"
+        android:textStyle="bold"
+        android:translationY="-10dp" />
+
+
+    <TextView
+        android:layout_width="322dp"
+        android:layout_height="40dp"
+        android:text="@string/passwordReqs"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:translationY="-10dp" />
+
+    <Button
+        android:id="@+id/selectAvatarButton"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/seafoam"
+        android:text="SELECT AVATAR"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:cornerRadius="20dp"
+        app:strokeWidth="2dp"/>
+
+    <Button
+        android:id="@+id/createAccountButton"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/seafoam"
+        android:text="CREATE ACCOUNT"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
+        app:strokeWidth="2dp"/>
+
+    <Button
+        android:id="@+id/backToLoginButton"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/login_instead"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
+        app:strokeWidth="2dp"/>
+
+
+</LinearLayout>

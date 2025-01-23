@@ -1,0 +1,78 @@
+package musiquest.Course;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import musiquest.StudentUser.StudentUser;
+import musiquest.StudentUser.StudentUserRepository;
+import musiquest.TeacherUser.TeacherUser;
+import musiquest.TeacherUser.TeacherUserRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
+@Service
+public class CourseService {
+
+    @Autowired
+    private CourseRepository courseRepository;
+
+    @Autowired
+    private TeacherUserRepository teacherUserRepository;
+
+    @Autowired
+    private StudentUserRepository studentUserRepository;
+
+    public Course createCourse(int teacherId, String courseName) {
+        TeacherUser teacher = teacherUserRepository.findById(teacherId);
+        if (teacher == null) {
+            // Handle the case where the teacher is not found
+            return null;
+        }
+
+        Course course = new Course();
+        course.setTeacher(teacher);
+        course.setCourseName(courseName);
+
+        return courseRepository.save(course);
+    }
+
+    public Course addStudentToCourse(int courseId, int studentId) {
+        Course course = courseRepository.findById(courseId).orElse(null);
+        StudentUser student = studentUserRepository.findById(studentId).orElse(null);
+
+        if (course == null || student == null) {
+            // Handle the case where the course or student is not found
+            return null;
+        }
+
+        course.addStudent(student);
+        return courseRepository.save(course);
+    }
+    
+    
+    public List<Integer> getCourseIds() {
+        List<Integer> courseIds = new ArrayList<>();
+        
+        for (Course course : courseRepository.findAll()) {
+            courseIds.add(course.getID());
+        }
+        
+        return courseIds;
+    }
+    
+    
+    public List<Integer> getCourseIdsFromTeacher(int teacherId) {
+    	TeacherUser user = teacherUserRepository.findById(teacherId);
+    	return user.getCourseIds();
+    }
+    
+    public List<Integer> getStudentIdsFromCourse(int courseId) {
+    	
+    }
+
+    // Other methods
+}

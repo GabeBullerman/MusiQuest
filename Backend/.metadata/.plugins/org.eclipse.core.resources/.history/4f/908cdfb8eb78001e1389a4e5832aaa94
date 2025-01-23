@@ -1,0 +1,93 @@
+package musiquest.SoloUser;
+
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
+
+
+@RestController
+@RequestMapping("/solouser")
+public class SoloController {
+
+
+	@Autowired
+    private SoloUserRepository SolouserRepository;
+
+
+    private String success = "{\"message\":\"success\"}";
+    public String failure = "{\"message\":\"failure\"}";
+
+<<<<<<< HEAD
+    @GetMapping(path = "/getallusers")
+=======
+    @GetMapping(path = "/solouser")
+>>>>>>> 6d09196eae5c192d7754edfd90cf3a6db139364a
+    List<SoloUser> getAllUsers(){
+        return SolouserRepository.findAll();
+    }
+
+<<<<<<< HEAD
+    @GetMapping(path = "/{id}")
+=======
+    @GetMapping(path = "/solouser/{id}")
+>>>>>>> 6d09196eae5c192d7754edfd90cf3a6db139364a
+    SoloUser getUserById( @PathVariable int id){
+        return SolouserRepository.findById(id);
+    }
+
+<<<<<<< HEAD
+    @PostMapping(path = "/createuser")
+=======
+    @PostMapping(path = "/solouser")
+>>>>>>> 6d09196eae5c192d7754edfd90cf3a6db139364a
+	public String createUser(@RequestBody SoloUser user){
+        if (user == null) 
+            return failure;
+        SolouserRepository.save(user);
+        return success;
+    }
+
+<<<<<<< HEAD
+    @PutMapping("/updateuser/{id}")
+=======
+    @PutMapping("/solouser/{id}")
+>>>>>>> 6d09196eae5c192d7754edfd90cf3a6db139364a
+    SoloUser updateUser(@PathVariable int id, @RequestBody SoloUser request){
+    	SoloUser user = SolouserRepository.findById(id);
+        if(user == null)
+            return null;
+        //user.setAccountId("SOL-" + user.getName() + user.getEmail().substring(0, user.getEmail().indexOf('@')));
+        SolouserRepository.save(request);
+        return SolouserRepository.findById(id);
+    } 
+    
+<<<<<<< HEAD
+    @DeleteMapping("/deleteuser/{id}")
+=======
+    @DeleteMapping("/solouser/{id}")
+>>>>>>> 6d09196eae5c192d7754edfd90cf3a6db139364a
+    SoloUser removeUser(@PathVariable int id) {
+    	SoloUser user = SolouserRepository.findById(id);
+    	if(user == null)
+            return null;
+    	SolouserRepository.deleteById(id);
+    	return user;
+    }
+   
+
+
+
+}

@@ -1,0 +1,24 @@
+Jaya
+Add questions and update game logic
+Add animation to game and map along with pop-up
+Create the leaderboard layout and loop
+
+Tyler
+Creating courses(classes)
+Leaderboard
+Storing level data in database
+Creating paths in Controllers
+Correctly connecting tables using relations like OneToOne
+
+Haakon
+Optimizing the backend (ex: conforming controllers to reflect an efficient Restfull API)
+Profile pictures/bio
+Censoring for chat box
+
+Gabe
+Redesigning the UI of the home pages
+Adding a chat function
+Setting the profile page
+User Bio
+User Profile Picture
+Fronend side of chat

@@ -1,0 +1,28 @@
+package musiquest.Leaderboard;
+
+import java.util.List;
+
+import javax.websocket.server.ServerEndpoint;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
+
+@Controller
+@ServerEndpoint(value = "/leaderboardWS")
+public class LeaderboardWS {
+
+    private final LeaderboardService leaderboardService;
+
+    @Autowired
+    public LeaderboardWS(LeaderboardService leaderboardService) {
+        this.leaderboardService = leaderboardService;
+    }
+
+    @MessageMapping("/refreshLeaderboard")
+    @SendTo("/leaderboard/updates")
+    public List<LeaderboardEntry> refreshLeaderboard() {
+        return leaderboardService.getTopScores(10);
+    }
+}

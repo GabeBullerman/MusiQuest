@@ -1,0 +1,83 @@
+package musiquest.StudentUser;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import musiquest.Course.Course;
+import musiquest.Course.CourseRepository;
+
+import java.util.Optional;
+
+@RestController
+public class StudentController {
+
+	@Autowired
+    private StudentUserRepository StudentuserRepository;
+	
+	@Autowired 
+	private CourseRepository courseRepository;
+
+
+    private String success = "{\"message\":\"success\"}";
+    public String failure = "{\"message\":\"failure\"}";
+
+
+    @GetMapping(path = "/stuedentusers")
+    List<StudentUser> getAllUsers(){
+        return StudentuserRepository.findAll();
+    }
+
+    @GetMapping(path = "/stuedentuser/{id}")
+    StudentUser getUserById( @PathVariable int id){
+        return StudentuserRepository.findById(id);
+    }
+    
+
+
+    @PostMapping(path = "/stuedentuser")
+	public String createUser(@RequestBody StudentUser user){
+        if (user == null)
+            return failure;
+        StudentuserRepository.save(user);
+        return success;
+    }
+    
+    @GetMapping(path = "/studentuser/getcourseids")
+    public List<Integer> getCourseIds(@RequestParam int studentId) {
+    	List<Integer> courseIds = new ArrayList<>();
+    	
+    	for(Course course: courseRepository.findAll()) {
+    		if(course.getStudentIds().contains(studentId)) {
+    			courseIds.add(course.getID());
+    		}
+    	}
+    	
+    	return courseIds;
+    }
+
+
+    @PutMapping("/stuedentuser/{id}")
+    StudentUser updateUser(@PathVariable int id, @RequestBody StudentUser request){
+    	StudentUser user = StudentuserRepository.findById(id);
+        if(user == null)
+            return null;
+        StudentuserRepository.save(request);
+        return StudentuserRepository.findById(id);
+    }
+	
+
+}

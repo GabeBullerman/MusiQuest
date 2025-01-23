@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgroundmap"
+    android:background="@drawable/backgroundmap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        tools:context=".WebSocketMain">
+
+
+
+
+    <Button
+        android:id="@+id/Lvl1Play"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#000000"
+        android:text="Play"
+        android:textSize="9dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981"
+        app:rippleColor="#000000" />
+
+    <Button
+            android:id="@+id/Dashboard"
+            android:layout_width="99dp"
+            android:layout_height="37dp"
+            android:backgroundTint="#000000"
+            android:text="Dashboard"
+            android:textSize="10dp"
+            app:iconTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:rippleColor="#000000" />
+
+    <Button
+        android:id="@+id/lvl2Play"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#000000"
+
+        android:text="Play"
+        android:textSize="9dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.881"
+        app:rippleColor="#000000" />
+
+    <Button
+        android:id="@+id/lvl3Play"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#000000"
+        android:text="Play"
+        android:textSize="9dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.745"
+        app:rippleColor="#000000" />
+    <Button
+        android:id="@+id/lvl4Play"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#000000"
+        android:text="Play"
+        android:textSize="9dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.582"
+        app:rippleColor="#000000" />
+
+    <Button
+        android:id="@+id/lvl5Play"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#000000"
+        android:text="Play"
+        android:textSize="9dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475"
+        app:rippleColor="#000000" />
+
+    <Button
+        android:id="@+id/lvl6Play"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#000000"
+        android:text="Play"
+        android:textSize="9dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34"
+        app:rippleColor="#000000" />
+
+    <Button
+        android:id="@+id/lvl7Play"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#000000"
+        android:text="Play"
+        android:textSize="9dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213"
+        app:rippleColor="#000000" />
+
+
+    <ImageView
+            android:id="@+id/ship"
+            android:scaleX="1.2"
+            app:srcCompat="@drawable/ship"
+            android:layout_width="83dp"
+            android:layout_height="57dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.028"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="120dp" />
+
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="310dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="97dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="sans-serif-black"
+            android:rotationX="25"
+
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="3"
+            android:text="MusiQuest"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColorLink="#000000"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toTopOf="@+id/lvl7Play"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+            android:id="@+id/userView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="sans-serif-black"
+            android:rotationX="25"
+
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="3"
+            android:text="User's Islands"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColorLink="#000000"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/lvl7Play"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.185"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.405" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

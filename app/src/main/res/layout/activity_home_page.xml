@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage"
+    android:background="@drawable/dashboard">
+
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="41dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="12dp"
+        android:background="#00FF0000"
+        android:translationX="367dp"
+        app:icon="@drawable/baseline_person_24"
+        app:iconGravity="textStart"
+        app:iconSize="48dp"
+        app:iconTint="@color/black"
+        tools:layout_editor_absoluteX="354dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/leaderboardButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="70dp"
+        android:background="#00FF0000"
+        app:icon="@drawable/baseline_workspace_premium_24"
+        app:iconGravity="textStart"
+        app:iconSize="40dp"
+        app:iconTint="@color/black" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignEnd="@+id/homeButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="5dp"
+        android:background="#00FF0000" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="690dp"
+        android:background="#00FF0000" />
+
+    <Button
+        android:id="@+id/alertsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-23dp"
+        android:layout_marginTop="690dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toEndOf="@+id/playButton"
+        android:background="#00FF0000" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="175dp"
+        android:layout_height="338dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="286dp"
+        app:cornerRadius="200dp"
+        app:srcCompat="@drawable/backgroundmap"
+        app:strokeWidth="2dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="261dp"
+        android:text="@string/your_map_preview" />
+</RelativeLayout>

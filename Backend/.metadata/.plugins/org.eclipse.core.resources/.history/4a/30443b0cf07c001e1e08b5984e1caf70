@@ -1,0 +1,182 @@
+package musiquest.Leaderboard;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import musiquest.websocket.MessageRepository;
+
+import javax.websocket.*;
+import javax.websocket.server.PathParam;
+import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
+
+@Controller
+@ServerEndpoint(value = "/leaderboardWS")
+public class LeaderboardWS {
+
+        private static MessageRepository messageRepository;
+        
+        @Autowired
+        private LeaderboardService leaderboardService;
+        
+
+        @Autowired
+        public void setMessageRepository(MessageRepository mr) {
+                messageRepository = mr;
+        }
+
+        private static Map<Session, String> sessionUsernameMap = new Hashtable<>();
+        private static Map<String, Session> usernameSessionMap = new Hashtable<>();
+
+        private final Logger logger = LoggerFactory.getLogger(LeaderboardWS.class);
+
+        /**
+         *
+         * a function to add a user to some seesion.
+         *
+         * @param session session object that is manged main by springboot
+         * @param username String of the user joining the chat
+         * @throws IOException LOL
+         */
+        @OnOpen
+        public void onOpen(Session session, @PathParam("username") String username) throws IOException {
+
+                //update logger
+                logger.info("Opened LeaderboardWS");
+                
+                leaderboardService.fill();
+
+
+                // store connecting user information
+                sessionUsernameMap.put(session, username);
+                usernameSessionMap.put(username, session);
+
+                //Send chat history to the newly connected user
+                //sendMessageToPArticularUser(username, getChatHistory());
+
+                // broadcast that new user joined
+                List<LeaderboardEntry> topScores = leaderboardService.getTopScores(10);
+                broadcast(topScores.toString());
+                
+
+        }
+
+        /**
+         * Sends a message to the chat from a user
+         * @param session
+         * @param message
+         * @throws IOException
+         */
+        @OnMessage
+        public void onMessage(Session session, String message) throws IOException {
+
+            logger.info("<Global> Got Message:" + message);
+
+            String username = sessionUsernameMap.get(session);
+
+            message = checkMessage(message);
+
+            broadcast(username + ": " + message);
+
+            // Saving chat history to repository
+            messageRepository.save(new Message(username, message));
+
+        }
+
+        /
+
+       
+
+        /**
+         * Disconnects users and also closes websocket if there is no users in chat.
+         *
+         * @param session
+         * @throws IOException
+         */
+        @OnClose
+        public void onClose(Session session) throws IOException {
+                logger.info("Closed global chat");
+
+                // remove the user connection information
+                String username = sessionUsernameMap.get(session);
+                sessionUsernameMap.remove(session);
+                usernameSessionMap.remove(username);
+
+                // broadcast that the user disconnected
+                String message = username + " disconnected";
+                broadcast(message);
+
+        }
+
+        /**
+         * When an error occures
+         * @param session
+         * @param throwable
+         */
+        @OnError
+        public void onError(Session session, Throwable throwable) {
+                // Do error handling here
+                logger.info("ERROR in Global chat");
+                throwable.printStackTrace();
+        }
+
+//        /**
+//         * Sends message to a particular user
+//         * @param username
+//         * @param message
+//         */
+//        private void sendMessageToParticularUser(String username, String message) {
+//                try {
+//                        usernameSessionMap.get(username).getBasicRemote().sendText(message);
+//                }
+//                catch (IOException e) {
+//                        logger.info("Exception: " + e.getMessage().toString());
+//                        e.printStackTrace();
+//                }
+//        }
+
+        /**
+         * Send message to all users
+         * @param message
+         */
+        private void broadcast(String message) {
+                sessionUsernameMap.forEach((session, username) -> {
+                        try {
+                                session.getBasicRemote().sendText(message);
+                        }
+                        catch (IOException e) {
+                                logger.info("Exception: " + e.getMessage().toString());
+                                e.printStackTrace();
+                        }
+
+                });
+
+        }
+
+//
+//        /**
+//         * Gets the Chat history from the repository
+//         * @return String history
+//         */
+//        private String getChatHistory() {
+//                List<Message> messages = messageRepository.findAll();
+//
+//                // convert the list to a string
+//                StringBuilder sb = new StringBuilder();
+//
+//                if(messages != null && !messages.isEmpty()) {
+//                        for (Message message : messages) {
+//                                sb.append(message.getUserName() + ": " + message.getContent() + "\n");
+//                        }
+//                }
+//                return sb.toString();
+//        }
+
+
+}
+

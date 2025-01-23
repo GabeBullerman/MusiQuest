@@ -1,0 +1,71 @@
+package musiquest.Leaderboard;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import javax.websocket.OnOpen;
+import javax.websocket.OnMessage;
+import javax.websocket.OnClose;
+import javax.websocket.OnError;
+import javax.websocket.Session;
+import javax.websocket.server.PathParam;
+import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
+import java.util.List;
+
+@Controller
+@ServerEndpoint(value = "/leaderboardWS/{username}")
+public class LeaderboardEntryWebSocket {
+
+    @Autowired
+    private LeaderboardService leaderboardService;
+
+    @OnOpen
+    public void onOpen(Session session, @PathParam("username") String username) {
+        // Send the top 10 scores when a user connects
+        List<LeaderboardEntry> topScores = leaderboardService.getTopScores(10);
+        sendTopScoresToClient(session, topScores);
+    }
+
+    @OnMessage
+    public void onMessage(Session session, String message) {
+        // Handle any incoming messages, if necessary
+    }
+
+    @OnClose
+    public void onClose(Session session) {
+        // Handle user disconnection, if necessary
+    }
+
+    @OnError
+    public void onError(Session session, Throwable throwable) {
+        // Handle WebSocket errors, if necessary
+    }
+
+    // Method to send the top scores to the connected client
+    private void sendTopScoresToClient(Session session, List<LeaderboardEntry> topScores) {
+        try {
+            String scoresJson = createJsonForTopScores(topScores);
+            session.getBasicRemote().sendText(scoresJson);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Create a JSON representation of the top scores
+    private String createJsonForTopScores(List<LeaderboardEntry> topScores) {
+        // Implement your JSON creation logic here
+        // You can use a JSON library like Jackson to create JSON from the list of top scores
+        // Example: return new ObjectMapper().writeValueAsString(topScores);
+        try {
+			return new ObjectMapper().writeValueAsString(topScores);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return "";
+    }
+}

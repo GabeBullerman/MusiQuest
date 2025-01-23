@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\drawable_finallongcow.png.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\drawable\\finallongcow.png"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\layout_main_activity.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\layout\\main_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\drawable_grass.jpg.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\drawable\\grass.jpg"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.test.app-merged_res-28:/layout_main_activity.xml.flat",
+        "source": "com.example.test.app-main-30:/layout/main_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\drawable_knight.png.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\drawable\\knight.png"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\drawable_grassbackdrop.jpg.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\drawable\\grassbackdrop.jpg"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\layout_game_activity.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\layout\\game_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jayae\\.gradle\\daemon\\8.0\\com.example.test.app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
+    }
+]

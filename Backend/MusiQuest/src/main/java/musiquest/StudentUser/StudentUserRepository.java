@@ -1,0 +1,17 @@
+package musiquest.StudentUser;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * StudentUserRespoitory
+ */
+public interface StudentUserRepository extends JpaRepository<StudentUser, Integer>{
+
+	StudentUser findById(int id);
+
+    void deleteById(int id);
+
+    
+	
+}

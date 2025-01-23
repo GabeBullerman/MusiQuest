@@ -1,0 +1,13 @@
+package musiquest.Course;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+
+public interface CourseRepository extends JpaRepository<Course, Integer> {
+
+	 Course findById(int id);
+
+	 void deleteById(int id);
+	
+}

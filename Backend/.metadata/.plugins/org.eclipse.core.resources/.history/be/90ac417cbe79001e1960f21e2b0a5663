@@ -1,0 +1,111 @@
+package musiquest.TeacherUser;
+
+import musiquest.Users.User;
+
+import javax.persistence.*;
+
+import javax.persistence.Table;
+
+import musiquest.Course.Course;
+import musiquest.StudentUser.StudentUser;
+import musiquest.Users.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Entity
+@Table
+public class TeacherUser extends User{
+
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+        name = "teacher_courses",
+        joinColumns = @JoinColumn(name = "teacher_id"),
+        inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+	private List<Course> courses;
+	
+	
+	public TeacherUser(String name, String email, String password) {
+		this.name = name;
+		this.emailId = email;
+		this.password = password;
+	}
+	
+	public TeacherUser() {
+	}
+	
+	
+	/*
+	 * Adds a class to the list of classes, Returns a string saying if it was added or not
+	 */
+	public StudentUser addStudentToCourse(StudentUser newStudent, int courseId) {
+		if(newStudent == null) {
+			return null;
+		}
+		for(Course course:courses) {
+			if(course.getID() == (courseId) && !(course.getStudents().contains(newStudent))) {
+				course.addStudent(newStudent);
+				return newStudent;
+			}
+		}
+		return null;
+	}
+	
+	/*
+	 * removes a class from the list if possible, returns a string declaring what happened
+	 */
+	public StudentUser removeStudentFromStudent(StudentUser oldStudent, int courseId) {
+		
+		if(oldStudent == null) {
+			return null;
+		}
+		for(Course course:courses) {
+			if(course.getID() == (courseId) && (course.getStudents().contains(oldStudent))) {
+				course.removeStudent(oldStudent);
+				return oldStudent;
+			}
+		}
+		return null;
+		
+	}
+	
+	/*
+	 * Returns the list of classes the student is in
+	 */
+	public List<Course> getCourses() {
+		return courses;
+	}
+	
+	/*
+	 * Sets a list of classes as 
+	 */
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+	
+	public void createCourse(Course newCourse) {
+		courses.add(new Course(this));
+	}
+	
+	public List<Integer> getCourseIds() {
+		List<Integer> courseIds = new ArrayList<>();
+		
+		for(Course course:courses) {
+			courseIds.add(course.getID());
+		}
+		
+		return courseIds;
+	}
+	
+	
+
+	
+	
+	
+	
+	
+	
+}
